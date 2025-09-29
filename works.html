@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jasmin | Works</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 🔗 Navigation -->
+  <nav class="navbar">
+    <div class="nav-content">
+      <div class="nav-brand">Jasmin</div>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="works.html" class="active">Works</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#languages">Languages</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 🎨 Works Page -->
+  <main class="container">
+    <section id="my-works">
+      <h2>My Works</h2>
+      <p>Here are some of my design projects:</p>
+
+      <div class="works-grid">
+        <!-- Works -->
+        <div class="work">
+          <img src="images/logo-1.jpg" alt="Logo for Mathans Group">
+          <div class="overlay"><p>Logo for Mathans Group</p></div>
+        </div>
+        <div class="work">
+          <img src="images/logo-2.jpg" alt="Logo for Moois Bakes">
+          <div class="overlay"><p>Logo for Moois Bakes</p></div>
+        </div>
+
+        <div class="work">
+          <img src="images/poster-1.jpg" alt="Poster for Home Sale Announcement">
+          <div class="overlay"><p>Poster for Home Sale Announcement</p></div>
+        </div>
+
+        <div class="work">
+          <img src="images/logo-3.jpg" alt="Logo for Mazwa food Products">
+          <div class="overlay"><p>Logo for Mazwa food Products</p></div>
+        </div>
+        <div class="work">
+          <img src="images/logo-4.jpg" alt="Logo for Ketharam Home Designs">
+          <div class="overlay"><p>Logo for Ketharam Home Designs</p></div>
+        </div>
+        <div class="work">
+          <img src="images/poster-4.jpg" alt="Poster for Mariya Group">
+          <div class="overlay"><p>Poster for Mariya Group</p></div>
+        </div>
+        
+        <div class="work">
+          <img src="images/poster-3.jpg" alt="Poster for Admission-Xint">
+          <div class="overlay"><p>Poster for Admission-Xint</p></div>
+        </div>
+        
+        <div class="work">
+          <img src="images/poster-2.jpg" alt="Poster for House Warming Wishes">
+          <div class="overlay"><p>Poster for House Warming Wishes</p></div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 📄 Footer -->
+  <footer>
+    © 2025 Jasmin KP. All rights reserved.
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="Preview">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    const closeBtn = document.querySelector('.close');
+
+   document.querySelectorAll('#my-works .work img').forEach(img => {
+  img.addEventListener('click', () => {
+    console.log('Image clicked:', img.src); // this should show in console
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('active');
+  });
+});
+
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.classList.remove('active');
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') lightbox.classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>

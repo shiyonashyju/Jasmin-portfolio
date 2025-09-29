@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jasmin | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+<body>
+
+  <!-- 🌙 Dark Mode Toggle -->
+  <button id="darkModeToggle" class="toggle-btn" aria-label="Toggle Dark Mode">☾</button>
+
+  <!-- 🔗 Navigation -->
+  <nav class="navbar">
+    <div class="nav-content">
+      <div class="nav-brand">Jasmin</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="works.html">Works</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#languages">Languages</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 🧾 Main Content -->
+  <main class="container">
+    
+    <!-- 🎯 Hero Section -->
+    <header class="hero">
+      <img src="profile.jpg" alt="Jasmin KP Profile Picture" class="profile-img" onerror="this.style.display='none'">
+      <h1>Hi, I'm <span class="highlight">Jasmin KP</span></h1>
+      <p class="subheading">Creative Graphic Designer with a blending artistic vision and technical skill to craft engaging visuals, and driven by a strong passion for impactful, user-focused design.</p>
+      <a href="JasminKP-Resume.pdf" download class="btn">
+        <span class="material-icons">download</span> Resume
+      </a>
+    </header>
+
+    <!-- 👩‍💻 About -->
+    <section id="about" data-aos="slide-up">
+      <h2>About Me</h2>
+      <p>Hey there! I’m <strong>Jasmin KP</strong>, a graphic designer from Kannur, bringing ideas to life.</p>
+      <p> From logos and branding to social media and print, I create designs that grab attention and tell a story.</p>
+      <p>  I love clean layouts, bold colors, and designs that make people stop and look. I’m currently looking for opportunities to grow as a digital designer. I’m curious, dedicated, and excited about my journey in the design world!</p>
+    </section>
+
+    <!-- ⚙️ Skills -->
+<section id="skills" data-aos="slide-up">
+  <h2>Skills & Tools</h2>
+  <ul class="skills-list">
+    <li>
+      <strong>Design Skills:</strong>
+      <ul>
+        <li>Logo & Brand Identity Design</li>
+        <li>Social Media Creatives</li>
+        <li>Print Design (Brochures, Posters, Banners, Packaging)</li>
+        <li>Layout & Composition</li>
+        <li>Typography & Color Theory</li>
+        <li>Photo Editing & Retouching</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Tools & Software:</strong>
+      <ul>
+        <li>Adobe Photoshop</li>
+        <li>Adobe Illustrator</li>
+        <li>Adobe InDesign</li>
+        <li>CorelDRAW</li>
+        <li>Canva</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+   <!-- 🎨 My Works (Preview as single clickable image) -->
+<section id="my-works" data-aos="slide-up">
+  <h2>My Works</h2>
+  <p>Here’s a preview of my design projects. Click the image below to see all works.</p>
+  
+  <!-- Single clickable image linking to works.html -->
+  <a href="works.html">
+    <img src="images/work-preview.jpg" 
+         alt="Preview of Works" 
+         style="max-width:300px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); cursor:pointer; display:block; margin:auto;">
+  </a>
+</section>
+
+
+
+
+    <!-- 🗣 Languages -->
+    <section id="languages" data-aos="slide-up">
+      <h2>Languages</h2>
+      <ul class="languages-list">
+        <li><strong>Malayalam:</strong> Advanced (Native)</li>
+        <li><strong>English:</strong>Intermediate</li>
+        <li><strong>Hindi:</strong> Intermediate</li>
+        <li><strong>Tamil:</strong> Beginner</li>
+      </ul>
+    </section>
+
+    <!-- 📬 Contact -->
+    <section id="contact" data-aos="slide-up">
+      <h2>Contact</h2>
+      <p>If you’d like to work together, collaborate, or just say hi — feel free to reach out!</p>
+      <p><span class="material-icons">email</span> <a href="mailto:jasmin.careerinfo@gmail.com">jasmin.careerinfo@gmail.com</a></p>
+    </section>
+
+  </main>
+
+  <!-- ⬆ Scroll to Top -->
+  <button id="toTopBtn" class="to-top-btn" title="Go to top">↑</button>
+
+  <!-- 📦 Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      once: false,
+      offset: 80
+    });
+
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggle.textContent = document.body.classList.contains('dark-mode') ? '☀' : '☾';
+    });
+
+    const toTopBtn = document.getElementById('toTopBtn');
+    window.onscroll = () => {
+      toTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    };
+    toTopBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+
+  <!-- 📄 Footer -->
+  <footer style="text-align:center; font-size: 0.9rem; padding: 20px; color: #888;">
+    © 2025 Jasmin KP. All rights reserved.
+  </footer>
+
+</body>
+</html>
